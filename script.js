@@ -11,8 +11,20 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let input = prompt('Choose one of "rock", "paper", "scissors"');
-  return input.toLowerCase();
+  let input = prompt('Choose one of "rock", "paper", "scissors"').toLowerCase();
+
+  let isInputValid = checkHumanChoice(input);
+
+  while (!isInputValid) {
+    input = prompt(
+      'Incorrect input. Please enter your choice: "rock", "paper", "scissors"',
+    );
+    if (checkHumanChoice(input)) {
+      isInputValid = true;
+    }
+  }
+
+  return input;
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -69,6 +81,18 @@ function GetScissorsSolution(computerChoice) {
   } else {
     return "Tie! Scissors does not beat Scissors";
   }
+}
+
+function checkHumanChoice(humanChoice) {
+  if (
+    humanChoice === "paper" ||
+    humanChoice === "rock" ||
+    humanChoice === "scissors"
+  ) {
+    return true;
+  }
+
+  return false;
 }
 
 function playGame() {
