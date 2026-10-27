@@ -2,10 +2,13 @@ function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
 
   if (randomNumber === 0) {
+    computerChoiceSelector.textContent = "Opponent's choice: rock";
     return "rock";
   } else if (randomNumber === 1) {
+    computerChoiceSelector.textContent = "Opponent's choice: paper";
     return "paper";
   } else {
+    computerChoiceSelector.textContent = "Opponent's choice: scissors";
     return "scissors";
   }
 }
@@ -66,18 +69,6 @@ function GetScissorsSolution(computerChoice) {
   }
 }
 
-function checkHumanChoice(humanChoice) {
-  if (
-    humanChoice === "paper" ||
-    humanChoice === "rock" ||
-    humanChoice === "scissors"
-  ) {
-    return true;
-  }
-
-  return false;
-}
-
 function playGame() {
   if (computerScore === 5) {
     gameEnd.style.color = "red";
@@ -106,6 +97,7 @@ function restartGame() {
   playAgain.style.display = "none";
   gameEnd.style.display = "none";
   displayResult("");
+  computerChoiceSelector.textContent = "";
 }
 
 function toggleChoiceBtn() {
@@ -128,6 +120,8 @@ const playAgain = document.querySelector("#playAgain");
 playAgain.style.display = "none";
 
 playAgain.addEventListener("click", () => restartGame());
+
+const computerChoiceSelector = document.querySelector("#cc");
 
 const choiceBtnSelector = document.querySelector("#choice");
 choiceBtnSelector.addEventListener("click", (e) => {

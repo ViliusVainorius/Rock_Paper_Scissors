@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
+    <div class="header">Lets play a game</div>
+    <div id="score">Score: 0:0</div>
     <div id="choice">
       <button id="rockBtn">rock</button>
       <button id="paperBtn">paper</button>
       <button id="scissorsBtn">scissors</button>
     </div>
 
-    <div id="score">Score: 0:0</div>
-    <div id="result"></div>
-    <div id="gameEnd"></div>
-
-    <button id="playAgain">Play again!</button>
+    <div class="resultDiv">
+      <div id="cc">Opponent's choice:</div>
+      <div id="result"></div>
+      <div id="gameEnd"></div>
+      <button id="playAgain">Play again!</button>
+    </div>
 
     <script src="script.js"></script>
   </body>
